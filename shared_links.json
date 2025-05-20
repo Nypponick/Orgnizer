@@ -1,0 +1,18 @@
+{
+    "links": [
+        {
+            "token": "1fe022a7-e4f3-4e1e-831c-dcd4fe5b8dcd",
+            "process_id": "20230001",
+            "created_date": "2025-05-09",
+            "expiry_date": "2025-06-08",
+            "is_active": false
+        },
+        {
+            "token": "69ce4e8d-5711-4bf4-a079-8bd9c44e3dad",
+            "process_id": "20230001",
+            "created_date": "2025-05-09",
+            "expiry_date": "2025-06-08",
+            "is_active": true
+        }
+    ]
+}

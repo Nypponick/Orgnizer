@@ -1,0 +1,473 @@
+import streamlit as st
+import pandas as pd
+from datetime import datetime
+from data import get_process_by_id, add_process, update_process, add_event
+from components.auth import get_users, assign_processes_to_client
+
+def display_add_edit_form(navigate_function):
+    """Display form for adding or editing a process"""
+    from utils import calculate_free_time_expiry, calculate_period_expiry, calculate_storage_days
+    
+    # Get storage days per period from config
+    storage_days_per_period = st.session_state.data.get("config", {}).get("storage_days_per_period", 30)
+    
+    if st.session_state.edit_mode:
+        process = get_process_by_id(st.session_state.selected_process)
+        if process is None:
+            st.error("Processo não encontrado!")
+            return
+        # Determinar título baseado no tipo de processo
+        process_type = process.get("type", "importacao")
+        if process_type == "exportacao":
+            st.header("Editar Processo de Exportação")
+        else:
+            st.header("Editar Processo de Importação")
+    else:
+        st.header("Novo Processo")
+        process = {"type": "importacao"}  # Padrão é importação
+    
+    # Create a form with multiple sections
+    with st.form("process_form"):
+        # Basic Information Section
+        st.subheader("Informações Básicas")
+        # Tipo de processo (Importação ou Exportação)
+        process_type = st.selectbox(
+            "Tipo de Processo",
+            options=["importacao", "exportacao"],
+            format_func=lambda x: "Importação" if x == "importacao" else "Exportação",
+            index=0 if process.get("type") != "exportacao" else 1
+        )
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            process_id = st.text_input("Código", value=process.get("id", ""), disabled=st.session_state.edit_mode)
+            reference = st.text_input("Referência", value=process.get("ref", ""))
+            
+            # PO para Importação, Pedido para Exportação
+            if process_type == "importacao":
+                po = st.text_input("PO (Purchase Order)", value=process.get("po", ""))
+            else:
+                po = st.text_input("Pedido", value=process.get("po", ""))
+        
+        with col2:
+            invoice = st.text_input("Invoice", value=process.get("invoice", ""))
+            
+            # Origem para Importação, Destino para Exportação
+            if process_type == "importacao":
+                origin = st.selectbox("Origem", options=["CHINA", "USA", "GERMANY", "JAPAN", "OTHER"], 
+                                    index=0 if not process.get("origin") else ["CHINA", "USA", "GERMANY", "JAPAN", "OTHER"].index(process.get("origin")))
+            else:
+                origin = st.selectbox("Destino", options=["CHINA", "USA", "GERMANY", "JAPAN", "OTHER"], 
+                                    index=0 if not process.get("origin") else ["CHINA", "USA", "GERMANY", "JAPAN", "OTHER"].index(process.get("origin")))
+            
+            product = st.text_input("Produto", value=process.get("product", ""))
+        
+        with col3:
+            container_type = st.text_input("Tipo de Container", value=process.get("container_type", "FCL 1 X 40"))
+            
+            # ETA para Importação, ETD para Exportação
+            if process_type == "importacao":
+                eta = st.date_input("ETA (Chegada)", value=None if not process.get("eta") else pd.to_datetime(process.get("eta"), dayfirst=True))
+            else:
+                eta = st.date_input("ETD (Saída)", value=None if not process.get("eta") else pd.to_datetime(process.get("eta"), dayfirst=True))
+            
+            map_number = st.text_input("Mapa", value=process.get("map", ""))
+        
+        # Shipping Information Section
+        if process_type == "importacao":
+            st.subheader("Informações de Embarque")
+        else:
+            st.subheader("Informações de Exportação")
+            
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            # Exportador para Importação, Embarcador para Exportação
+            if process_type == "importacao":
+                exporter = st.text_input("Exportador", value=process.get("exporter", ""))
+            else:
+                exporter = st.text_input("Embarcador", value=process.get("exporter", ""))
+                
+            ship = st.text_input("Navio", value=process.get("ship", ""))
+            agent = st.text_input("Agente", value=process.get("agent", ""))
+        
+        with col2:
+            bl_number = st.text_input("Número B/L", value=process.get("bl_number", ""))
+            container = st.text_input("Container", value=process.get("container", ""))
+            
+            # Específico para Exportação
+            if process_type == "exportacao":
+                importer = st.text_input("Importador", value=process.get("importer", ""))
+        
+        with col3:
+            free_time = st.text_input("Free Time (dias)", value=process.get("free_time", "7"))
+            
+            # Específico para Exportação - Deadline
+            if process_type == "exportacao":
+                deadline = st.date_input(
+                    "Deadline", 
+                    value=None if not process.get("deadline") else pd.to_datetime(process.get("deadline"), dayfirst=True)
+                )
+            
+            # Calcular vencimento do free time automaticamente baseado no ETA e dias de free time
+            free_time_expiry_value = ""
+            if eta and free_time:
+                free_time_expiry_value = calculate_free_time_expiry(eta.strftime("%d/%m/%Y"), free_time)
+            
+            free_time_expiry = st.date_input(
+                "Vencimento do Free Time (calculado automaticamente)", 
+                value=None if not free_time_expiry_value else pd.to_datetime(free_time_expiry_value, dayfirst=True),
+                disabled=True
+            )
+            
+            empty_return = st.date_input(
+                "Devolução de Vazio", 
+                value=None if not process.get("empty_return") else pd.to_datetime(process.get("empty_return"), dayfirst=True)
+            )
+        
+        # Storage Information Section
+        if process_type == "importacao":
+            st.subheader("Informações de Armazenagem")
+        else:
+            st.subheader("Informações do Terminal de Exportação")
+            
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            # Campo adaptado de acordo com o tipo de processo
+            if process_type == "importacao":
+                port_entry_date = st.date_input(
+                    "Entrada no Porto/Recinto", 
+                    value=None if not process.get("port_entry_date") else pd.to_datetime(process.get("port_entry_date"), dayfirst=True)
+                )
+            else:
+                port_entry_date = st.date_input(
+                    "Entrada no Terminal", 
+                    value=None if not process.get("port_entry_date") else pd.to_datetime(process.get("port_entry_date"), dayfirst=True)
+                )
+            
+            # Terminal de importação ou exportação
+            if process_type == "importacao":
+                terminal = st.text_input("Terminal", value=process.get("terminal", ""))
+            else:
+                terminal = st.text_input("Terminal de Exportação", value=process.get("terminal", ""))
+            
+        with col2:
+            current_period_start = st.date_input(
+                "Início do Período Atual", 
+                value=None if not process.get("current_period_start") else pd.to_datetime(process.get("current_period_start"), dayfirst=True)
+            )
+            
+            days_per_period = st.number_input(
+                "Dias por Período", 
+                min_value=1, 
+                max_value=365, 
+                value=storage_days_per_period,
+                help="Número de dias por período de armazenagem"
+            )
+        
+        with col3:
+            # Calcular vencimento do período automaticamente
+            current_period_expiry_value = ""
+            if current_period_start:
+                current_period_expiry_value = calculate_period_expiry(
+                    current_period_start.strftime("%d/%m/%Y"), 
+                    days_per_period
+                )
+            
+            current_period_expiry = st.date_input(
+                "Vencimento do Período (calculado automaticamente)", 
+                value=None if not current_period_expiry_value else pd.to_datetime(current_period_expiry_value, dayfirst=True),
+                disabled=True
+            )
+            
+            # Calcular dias armazenados automaticamente
+            storage_days_value = process.get("storage_days", "0")
+            if port_entry_date:
+                storage_days_value = calculate_storage_days(port_entry_date.strftime("%d/%m/%Y"))
+            
+            storage_days = st.text_input(
+                "Dias Armazenados", 
+                value=storage_days_value,
+                disabled=True
+            )
+        
+        # Additional Information Section
+        st.subheader("Documentos e Status")
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            invoice_number = st.text_input("Nota Fiscal", value=process.get("invoice_number", ""))
+            
+            # D.I. para Importação, DU-E para Exportação
+            if process_type == "importacao":
+                di = st.text_input("D.I.", value=process.get("di", ""))
+            else:
+                di = st.text_input("DU-E", value=process.get("di", ""))
+        
+        with col2:
+            original_docs = st.selectbox(
+                "Documentos Originais", 
+                options=["Sim", "Não", "Em trânsito"],
+                index=0 if not process.get("original_docs") else ["Sim", "Não", "Em trânsito"].index(process.get("original_docs"))
+            )
+            
+# O campo Data de Devolução foi removido, pois é redundante com Devolução de Vazio
+        
+        with col3:
+            # Status organizados em grupos para melhor visualização (como no Django)
+            if process_type == "importacao":
+                status_options = [
+                    # Status Básicos
+                    "Em andamento", "Concluído", "Atrasado", "Pendente", "Cancelado",
+                    # Status de Importação
+                    "Novo Processo", "Navio em Santos", "Chegando no porto de Santos",
+                    "Chegada do navio alterada", "Trânsito Aduaneiro", 
+                    "Em rota de trânsito aduaneiro", "Presença de carga em Bauru",
+                    "Entrega programada"
+                ]
+            else:
+                status_options = [
+                    # Status Básicos
+                    "Em andamento", "Concluído", "Atrasado", "Pendente", "Cancelado",
+                    # Status de Exportação
+                    "Novo Processo", "Booking confirmado", "Documentação em análise",
+                    "Carga no terminal", "Carga embarcada", "Navio zarpou",
+                    "Bill of Lading emitido", "Documentos enviados"
+                ]
+            
+            status = st.selectbox(
+                "Status", 
+                options=status_options,
+                index=0 if not process.get("status") else 
+                      (status_options.index(process.get("status")) 
+                      if process.get("status") in status_options else 0)
+            )
+        
+        # Observations
+        observations = st.text_area("Observações", value=process.get("observations", ""), height=100)
+        
+        # Seção para atribuir cliente (apenas para administradores)
+        if 'user_role' in st.session_state and st.session_state.user_role == 'admin':
+            st.subheader("Atribuir a Cliente")
+            
+            # Obter lista de clientes
+            users = get_users()
+            clients = [user for user in users if user['role'] == 'client']
+            
+            # Verificar se já existe um cliente atribuído ao processo (quando estiver editando)
+            current_client = None
+            current_client_id = None
+            if st.session_state.edit_mode and process.get("id"):
+                from components.auth import get_client_for_process
+                current_client = get_client_for_process(process.get("id"))
+                if current_client:
+                    current_client_id = current_client.get("id")
+            
+            # Se não houver clientes, exibir mensagem
+            if not clients:
+                st.info("Não há clientes cadastrados. Adicione clientes na seção de Usuários para poder atribuir processos.")
+                assigned_client = current_client_id  # Manter o cliente atual se existir
+            else:
+                # Lista de clientes para seleção
+                client_options = [(user['id'], f"{user['name']} ({user['email']})") for user in clients]
+                client_options.insert(0, ("", "Selecione um cliente..."))  # Opção para não selecionar nenhum cliente
+                
+                client_ids = [id for id, _ in client_options]
+                client_labels = [label for _, label in client_options]
+                
+                # Determinar o índice padrão (cliente atual se estiver editando)
+                default_index = 0
+                if current_client_id:
+                    # Procurar o índice do cliente atual na lista
+                    try:
+                        default_index = client_ids.index(current_client_id)
+                    except ValueError:
+                        default_index = 0
+                
+                # Campo para selecionar cliente
+                selected_client_label = st.selectbox(
+                    "Cliente", 
+                    options=client_labels,
+                    index=default_index  # Pré-selecionar o cliente atual
+                )
+                
+                # Determinar o ID do cliente selecionado
+                if selected_client_label == "Selecione um cliente...":
+                    assigned_client = None
+                else:
+                    selected_index = client_labels.index(selected_client_label)
+                    assigned_client = client_ids[selected_index]
+        else:
+            # Se não for admin, não pode atribuir cliente
+            assigned_client = None
+        
+        # Submit buttons
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            submit_button = st.form_submit_button("Salvar", use_container_width=True)
+        
+        with col2:
+            cancel_button = st.form_submit_button("Cancelar", use_container_width=True)
+    
+    # Handle form submission
+    if submit_button:
+        # Prepare process data
+        process_data = {
+            "id": process_id if process_id else None,
+            "ref": reference,
+            "invoice": invoice,
+            "origin": origin,
+            "type": process_type,
+            "container_type": container_type,
+            "eta": eta.strftime("%d/%m/%Y") if eta else "",
+            "status": status,
+            "observations": observations,
+            "exporter": exporter,
+            "ship": ship,
+            "agent": agent,
+            "bl_number": bl_number,
+            "container": container,
+            "terminal": terminal,
+            "invoice_number": invoice_number,
+            "di": di,
+            "free_time": free_time,
+            "free_time_expiry": free_time_expiry.strftime("%d/%m/%Y") if free_time_expiry else "",
+            "po": po,
+            "product": product,
+            "map": map_number,
+            "port_entry_date": port_entry_date.strftime("%d/%m/%Y") if port_entry_date else "",
+            "current_period_start": current_period_start.strftime("%d/%m/%Y") if current_period_start else "",
+            "current_period_expiry": current_period_expiry.strftime("%d/%m/%Y") if current_period_expiry else "",
+            "storage_days": storage_days,
+            "original_docs": original_docs,
+            "empty_return": empty_return.strftime("%d/%m/%Y") if empty_return else "",
+            "last_update": datetime.now().strftime("%d/%m/%Y")
+        }
+        
+        # Adicionar campos específicos para exportação, se aplicável
+        if process_type == "exportacao":
+            # Campo de importador para exportação (se existir no formulário)
+            if 'importer' in locals():
+                process_data["importer"] = importer
+                
+            # Campo de deadline para exportação (se existir no formulário)
+            if 'deadline' in locals() and deadline:
+                process_data["deadline"] = deadline.strftime("%d/%m/%Y")
+        
+        # Atualizar a configuração de dias por período
+        if "config" not in st.session_state.data:
+            st.session_state.data["config"] = {}
+        st.session_state.data["config"]["storage_days_per_period"] = days_per_period
+        
+        # If editing, maintain the existing events
+        if st.session_state.edit_mode:
+            process_data["events"] = process.get("events", [])
+            
+            # Add an update event
+            process_data["events"].append({
+                "date": datetime.now().strftime("%d/%m/%Y"),
+                "description": "Processo atualizado",
+                "user": "Admin"
+            })
+            
+            # Update the process
+            if update_process(process_data):
+                # Lidar com a atribuição de cliente no modo de edição
+                if 'user_role' in st.session_state and st.session_state.user_role == 'admin':
+                    # Se um cliente foi selecionado
+                    if assigned_client:
+                        # Verificar se o cliente é diferente do atual
+                        from components.auth import get_client_for_process
+                        current_client = get_client_for_process(process_data["id"])
+                        
+                        # Se não houver cliente atual ou o cliente selecionado for diferente
+                        if not current_client or current_client.get("id") != assigned_client:
+                            # Obter cliente
+                            users = get_users()
+                            client = next((c for c in users if c['id'] == assigned_client), None)
+                            
+                            if client:
+                                # Atualizar a lista de processos do cliente
+                                processes = client.get('processes', [])
+                                if process_data["id"] not in processes:
+                                    processes.append(process_data["id"])
+                                    success, _ = assign_processes_to_client(assigned_client, processes)
+                                    
+                                    if success:
+                                        # Adicionar evento ao processo
+                                        add_event(process_data["id"], f"Processo atribuído ao cliente {client['name']}")
+                                        st.success(f"Processo atualizado com sucesso e atribuído a {client['name']}!")
+                                    else:
+                                        st.success("Processo atualizado com sucesso, mas não foi possível atribuir ao cliente.")
+                                else:
+                                    st.success("Processo atualizado com sucesso!")
+                            else:
+                                st.success("Processo atualizado com sucesso!")
+                        else:
+                            st.success("Processo atualizado com sucesso!")
+                    else:
+                        # Se nenhum cliente foi selecionado, remover o processo dos clientes que possam tê-lo
+                        from components.auth import load_users, save_users
+                        users_data = load_users()
+                        
+                        # Verificar se algum cliente tem este processo
+                        process_removed = False
+                        for user in users_data.get('users', []):
+                            if user['role'] == 'client' and 'processes' in user and process_data["id"] in user['processes']:
+                                user['processes'].remove(process_data["id"])
+                                process_removed = True
+                        
+                        if process_removed:
+                            save_users(users_data)
+                            add_event(process_data["id"], "Processo removido de cliente")
+                            st.success("Processo atualizado com sucesso e desassociado de cliente!")
+                        else:
+                            st.success("Processo atualizado com sucesso!")
+                else:
+                    st.success("Processo atualizado com sucesso!")
+                
+                st.session_state.edit_mode = False
+                navigate_function("home")
+            else:
+                st.error("Erro ao atualizar processo!")
+        else:
+            # Add a new process
+            if add_process(process_data):
+                new_process_id = process_data["id"] if process_data.get("id") else None
+                
+                # Se foi especificado um cliente e se for administrador
+                if assigned_client and 'user_role' in st.session_state and st.session_state.user_role == 'admin':
+                    # Obter cliente
+                    users = get_users()
+                    client = next((c for c in users if c['id'] == assigned_client), None)
+                    
+                    if client:
+                        # Atualizar a lista de processos do cliente
+                        processes = client.get('processes', [])
+                        if new_process_id not in processes:
+                            processes.append(new_process_id)
+                            success, _ = assign_processes_to_client(assigned_client, processes)
+                            
+                            if success:
+                                # Adicionar evento ao processo
+                                add_event(new_process_id, f"Processo atribuído ao cliente {client['name']}")
+                                st.success(f"Processo adicionado com sucesso e atribuído a {client['name']}!")
+                            else:
+                                st.warning(f"Processo adicionado, mas não foi possível atribuir ao cliente.")
+                        else:
+                            st.success(f"Processo adicionado com sucesso! (Já atribuído a {client['name']})")
+                    else:
+                        st.success("Processo adicionado com sucesso!")
+                else:
+                    st.success("Processo adicionado com sucesso!")
+                
+                navigate_function("home")
+            else:
+                st.error("Erro ao adicionar processo!")
+    
+    if cancel_button:
+        st.session_state.edit_mode = False
+        navigate_function("home")

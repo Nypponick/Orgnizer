@@ -1,0 +1,1731 @@
+{
+    "processes": [
+        {
+            "id": "1111",
+            "ref": "11111111111",
+            "invoice": "1111111111111111111111111111",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Novo Processo",
+            "observations": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "container": "",
+            "terminal": "1111111111111111111111111111",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "11111111",
+            "product": "1111111111111111111111111111111111111111111111111111",
+            "map": "",
+            "port_entry_date": "01/05/2025",
+            "current_period_start": "12/05/2025",
+            "current_period_expiry": "27/05/2025",
+            "storage_days": 12,
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "13/05/2025",
+            "events": [
+                {
+                    "date": "12/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin",
+                    "id": "08f39f65-22d1-46df-8e49-ba4dc3eb55cc"
+                },
+                {
+                    "date": "12/05/2025",
+                    "description": "Processo atualizado",
+                    "user": "Admin",
+                    "id": "1619f5d9-d063-4fde-8a92-e0c75bdda614"
+                },
+                {
+                    "id": "72969a4f-7881-4ecd-aa5e-6199b0259724",
+                    "date": "12/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 07/05/2025, vencimento 11/05/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "date": "12/05/2025",
+                    "description": "Processo atualizado",
+                    "user": "Admin",
+                    "id": "dcb4e415-1f5f-40c0-b871-778ebab49eec"
+                },
+                {
+                    "id": "cd9e817a-a12d-4887-a8f6-952fc832213d",
+                    "date": "12/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 12/05/2025, vencimento 15/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250001",
+            "ref": "",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "exportacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Em andamento",
+            "observations": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "",
+            "product": "",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "13/05/2025",
+            "importer": "",
+            "deadline": "15/05/2025",
+            "events": [
+                {
+                    "id": "13d43749-fba9-482a-acc9-21f8500b5790",
+                    "date": "12/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                },
+                {
+                    "date": "13/05/2025",
+                    "description": "Processo atualizado",
+                    "user": "Admin",
+                    "id": "731d7135-0765-4bce-814b-e46d393ac559"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250002",
+            "ref": "123",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "exportacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Em andamento",
+            "observations": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "",
+            "product": "",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "13/05/2025",
+            "importer": "",
+            "dispatch_value": "50.000,00",
+            "knowledge_number": "",
+            "drawback": "",
+            "tracking_number": "",
+            "export_type": "Rodovi\u00e1ria",
+            "cross_terminal": "",
+            "carrier": "",
+            "events": [
+                {
+                    "id": "e0b6e925-376a-4d20-8959-4c21b606b38b",
+                    "date": "13/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                },
+                {
+                    "date": "13/05/2025",
+                    "description": "Processo atualizado",
+                    "user": "Admin",
+                    "id": "0ba6f4cd-d525-4c24-867f-67428562d60d"
+                },
+                {
+                    "id": "9b3d1f71-7ad8-4fa3-aedc-bdb3780fd21c",
+                    "date": "13/05/2025",
+                    "description": "Processo atribu\u00eddo ao cliente Cliente Demonstra\u00e7\u00e3o",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250003",
+            "ref": "",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "exportacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Em andamento",
+            "observations": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "",
+            "product": "",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "13/05/2025",
+            "importer": "",
+            "dispatch_value": "",
+            "knowledge_number": "",
+            "drawback": "",
+            "tracking_number": "",
+            "export_type": "Mar\u00edtima",
+            "shipping_terminal": "",
+            "redex_clearance": "Sim",
+            "events": [
+                {
+                    "id": "91109638-1ab4-4d65-a5ae-f0afad6f4a22",
+                    "date": "13/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250004",
+            "ref": "Exportacao01",
+            "invoice": "EXPO01",
+            "origin": "CHINA",
+            "type": "exportacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Em andamento",
+            "observations": "",
+            "exporter": "KILBRA TRADING",
+            "ship": "A definir",
+            "agent": "AGENTE DE CARGA",
+            "bl_number": "BLTESTE",
+            "container": "A definir",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "0",
+            "free_time_expiry": "",
+            "po": "",
+            "product": "KM 2000",
+            "map": "N\u00e3o se aplica",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "13/05/2025",
+            "importer": "GRUPO IMPORTADOR",
+            "dispatch_value": "",
+            "knowledge_number": "",
+            "drawback": "",
+            "tracking_number": "",
+            "export_type": "Rodovi\u00e1ria",
+            "cross_terminal": "",
+            "carrier": "",
+            "events": [
+                {
+                    "id": "bbce3a1f-9e63-43b0-91f1-5f016af6b924",
+                    "date": "13/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                },
+                {
+                    "id": "68b64691-3cf3-470c-86b5-56f297b2f83b",
+                    "date": "13/05/2025",
+                    "description": "Processo atribu\u00eddo ao cliente Cliente Demonstra\u00e7\u00e3o",
+                    "user": "Admin"
+                },
+                {
+                    "date": "13/05/2025",
+                    "description": "Processo atualizado",
+                    "user": "Admin",
+                    "id": "230e3166-a42b-4cc1-8fd0-bdd153a4750c"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250005",
+            "ref": "",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "exportacao",
+            "container_type": "FCL 1 X 40",
+            "status": "Em andamento",
+            "observations": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "product": "",
+            "last_update": "13/05/2025",
+            "importer": "",
+            "dispatch_value": "",
+            "knowledge_number": "",
+            "drawback": "",
+            "tracking_number": "",
+            "export_type": "Mar\u00edtima",
+            "shipping_terminal": "",
+            "redex_clearance": "Sim",
+            "events": [
+                {
+                    "id": "dea42c86-19ee-4033-9bce-0c9a98537869",
+                    "date": "13/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250006",
+            "ref": "",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "FCL 1 X 40",
+            "status": "Em andamento",
+            "observations": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "product": "",
+            "last_update": "13/05/2025",
+            "eta": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "events": [
+                {
+                    "id": "e932bf47-f5d9-41f4-a876-d4fcf7a95c78",
+                    "date": "13/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250500",
+            "status": "Aguardando chegada",
+            "type": "importacao",
+            "ref": "REF-3780/2025",
+            "po": "PO-84761",
+            "origin": "VIETN\u00c3",
+            "product": "EQUIPAMENTOS INDUSTRIAIS",
+            "eta": "09/07/2025",
+            "free_time": 11,
+            "free_time_expiry": "20/07/2025",
+            "empty_return": "03/08/2025",
+            "map": "MAP-9016",
+            "invoice_number": "INV-28143",
+            "port_entry_date": "13/05/2025",
+            "current_period_start": "13/05/2025",
+            "current_period_expiry": "28/05/2025",
+            "storage_days": 0,
+            "terminal": "TCP",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "14/04/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-3780/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "30/01/2025",
+                    "description": "Documentos recebidos - REF-3780/2025",
+                    "user": "admin"
+                }
+            ],
+            "container": "CONT6966388",
+            "ship": "NAVIO COSCO 852",
+            "agent": "AGENTE LOG\u00cdSTICO A",
+            "bl_number": "BL-884142",
+            "original_documents": false,
+            "days_per_period": 15,
+            "archived": false
+        },
+        {
+            "id": "20250501",
+            "status": "Aguardando documentos",
+            "type": "importacao",
+            "ref": "REF-6798/2025",
+            "po": "PO-49800",
+            "origin": "\u00cdNDIA",
+            "product": "QU\u00cdMICOS",
+            "eta": "01/06/2025",
+            "free_time": 14,
+            "free_time_expiry": "15/06/2025",
+            "empty_return": "17/06/2025",
+            "map": "MAP-3962",
+            "invoice_number": "INV-46508",
+            "port_entry_date": "12/12/2024",
+            "current_period_start": "25/01/2025",
+            "current_period_expiry": "23/02/2025",
+            "storage_days": 152,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "20/03/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-6798/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "08/04/2025",
+                    "description": "Documentos recebidos - REF-6798/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "fc94f5d4-88af-4468-9f4c-e06d59049fd6",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 26/12/2024, vencimento 24/01/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "9de29d21-a046-4ca3-ab27-eac4f485119c",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 25/01/2025, vencimento 23/02/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT6571195",
+            "ship": "NAVIO MAERSK 500",
+            "agent": "AGENTE LOG\u00cdSTICO B",
+            "bl_number": "BL-353899",
+            "original_documents": true,
+            "days_per_period": 13,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250502",
+            "status": "Aguardando chegada",
+            "type": "importacao",
+            "ref": "REF-9002/2025",
+            "po": "PO-78308",
+            "origin": "CHINA",
+            "product": "M\u00c1QUINAS CNC",
+            "eta": "03/03/2025",
+            "free_time": 14,
+            "free_time_expiry": "17/03/2025",
+            "empty_return": "09/04/2025",
+            "map": "MAP-2928",
+            "invoice_number": "INV-77753",
+            "port_entry_date": "30/01/2025",
+            "current_period_start": "15/03/2025",
+            "current_period_expiry": "13/04/2025",
+            "storage_days": 103,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "20/11/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-9002/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "30/03/2025",
+                    "description": "Documentos recebidos - REF-9002/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "89e7c568-27fb-4c6e-b887-646c4e62647d",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 13/02/2025, vencimento 14/03/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "793fa999-0433-4afc-9044-af07a970dcb5",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 15/03/2025, vencimento 13/04/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT3166726",
+            "ship": "NAVIO STAR 885",
+            "agent": "AGENTE LOG\u00cdSTICO A",
+            "bl_number": "BL-442716",
+            "original_documents": false,
+            "days_per_period": 13,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250503",
+            "status": "Liberado",
+            "type": "importacao",
+            "ref": "REF-5613/2025",
+            "po": "PO-34501",
+            "origin": "ALEMANHA",
+            "product": "ALIMENTOS",
+            "eta": "29/03/2025",
+            "free_time": 19,
+            "free_time_expiry": "17/04/2025",
+            "empty_return": "01/05/2025",
+            "map": "MAP-6653",
+            "invoice_number": "INV-88346",
+            "port_entry_date": "22/02/2025",
+            "current_period_start": "04/04/2025",
+            "current_period_expiry": "03/05/2025",
+            "storage_days": 80,
+            "terminal": "ITAPO\u00c1",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "10/03/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-5613/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "23/03/2025",
+                    "description": "Documentos recebidos - REF-5613/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "47b7cb5b-ea67-41a5-8092-e30f4fe4b1e5",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 05/03/2025, vencimento 03/04/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "5327ad06-d71c-404e-b5f5-a9ceaafe80d1",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 04/04/2025, vencimento 03/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT1865030",
+            "ship": "NAVIO HAPAG 544",
+            "agent": "AGENTE LOG\u00cdSTICO A",
+            "bl_number": "BL-932102",
+            "original_documents": true,
+            "days_per_period": 10,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250504",
+            "status": "Chegada do navio alterada",
+            "type": "importacao",
+            "ref": "REF-7802/2025",
+            "po": "PO-83990",
+            "origin": "ESPANHA",
+            "product": "ALIMENTOS",
+            "eta": "29/01/2025",
+            "free_time": 7,
+            "free_time_expiry": "05/02/2025",
+            "empty_return": "10/03/2025",
+            "map": "MAP-5086",
+            "invoice_number": "INV-68231",
+            "port_entry_date": "01/01/2025",
+            "current_period_start": "11/02/2025",
+            "current_period_expiry": "12/03/2025",
+            "storage_days": 132,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "17/12/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-7802/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "28/04/2025",
+                    "description": "Documentos recebidos - REF-7802/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "f3669ea2-82d0-48cb-903b-00339c9e7976",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 12/01/2025, vencimento 10/02/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "0839b9f4-8f7d-48fc-9013-9586d54a03ab",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 11/02/2025, vencimento 12/03/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT7254045",
+            "ship": "NAVIO MSC 699",
+            "agent": "AGENTE MAR\u00cdTIMO A",
+            "bl_number": "BL-333614",
+            "original_documents": false,
+            "days_per_period": 10,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250505",
+            "status": "BL liberado",
+            "type": "importacao",
+            "ref": "REF-7865/2025",
+            "po": "PO-50644",
+            "origin": "IT\u00c1LIA",
+            "product": "TECIDOS",
+            "eta": "06/03/2025",
+            "free_time": 15,
+            "free_time_expiry": "21/03/2025",
+            "empty_return": "21/03/2025",
+            "map": "MAP-4561",
+            "invoice_number": "INV-41989",
+            "port_entry_date": "10/03/2025",
+            "current_period_start": "23/04/2025",
+            "current_period_expiry": "22/05/2025",
+            "storage_days": 64,
+            "terminal": "ITAPO\u00c1",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "05/02/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-7865/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "17/11/2024",
+                    "description": "Documentos recebidos - REF-7865/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "51738f84-9e2a-49a0-b1ed-c5add2b3c1c6",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 24/03/2025, vencimento 22/04/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "431d9b38-dc82-4de8-9b8f-ec8611901a90",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 23/04/2025, vencimento 22/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT1370267",
+            "ship": "NAVIO STAR 203",
+            "agent": "AGENTE LOG\u00cdSTICO E",
+            "bl_number": "BL-991283",
+            "original_documents": false,
+            "days_per_period": 13,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250506",
+            "status": "Conclu\u00eddo",
+            "type": "importacao",
+            "ref": "REF-8482/2025",
+            "po": "PO-67959",
+            "origin": "JAP\u00c3O",
+            "product": "PRODUTOS FARMAC\u00caUTICOS",
+            "eta": "23/12/2024",
+            "free_time": 22,
+            "free_time_expiry": "14/01/2025",
+            "empty_return": "02/02/2025",
+            "map": "MAP-7813",
+            "invoice_number": "INV-80971",
+            "port_entry_date": "02/05/2025",
+            "current_period_start": "02/05/2025",
+            "current_period_expiry": "14/05/2025",
+            "storage_days": 11,
+            "terminal": "TCP",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "28/11/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-8482/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "12/01/2025",
+                    "description": "Documentos recebidos - REF-8482/2025",
+                    "user": "admin"
+                }
+            ],
+            "container": "CONT9812574",
+            "ship": "NAVIO MSC 522",
+            "agent": "AGENTE INTERNACIONAL C",
+            "bl_number": "BL-263574",
+            "original_documents": true,
+            "days_per_period": 12,
+            "archived": false
+        },
+        {
+            "id": "20250507",
+            "status": "Nacionalizado",
+            "type": "importacao",
+            "ref": "REF-1096/2025",
+            "po": "PO-18342",
+            "origin": "ESPANHA",
+            "product": "ELETR\u00d4NICOS",
+            "eta": "02/08/2025",
+            "free_time": 17,
+            "free_time_expiry": "19/08/2025",
+            "empty_return": "27/08/2025",
+            "map": "MAP-7044",
+            "invoice_number": "INV-40364",
+            "port_entry_date": "19/12/2024",
+            "current_period_start": "01/02/2025",
+            "current_period_expiry": "02/03/2025",
+            "storage_days": 145,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "24/11/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-1096/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "04/03/2025",
+                    "description": "Documentos recebidos - REF-1096/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "7dea7c4e-a339-4eef-92a2-48c816755331",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 02/01/2025, vencimento 31/01/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "11ec5cd6-430f-4775-9847-04f50ee89524",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 01/02/2025, vencimento 02/03/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT3277891",
+            "ship": "NAVIO HAPAG 743",
+            "agent": "AGENTE LOG\u00cdSTICO C",
+            "bl_number": "BL-899622",
+            "original_documents": false,
+            "days_per_period": 13,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250508",
+            "status": "Conclu\u00eddo",
+            "type": "importacao",
+            "ref": "REF-2415/2025",
+            "po": "PO-83273",
+            "origin": "VIETN\u00c3",
+            "product": "A\u00c7O",
+            "eta": "20/05/2025",
+            "free_time": 16,
+            "free_time_expiry": "05/06/2025",
+            "empty_return": "07/06/2025",
+            "map": "MAP-1982",
+            "invoice_number": "INV-34275",
+            "port_entry_date": "25/11/2024",
+            "current_period_start": "08/01/2025",
+            "current_period_expiry": "06/02/2025",
+            "storage_days": 169,
+            "terminal": "ITAPO\u00c1",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "24/02/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-2415/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "26/04/2025",
+                    "description": "Documentos recebidos - REF-2415/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "1c62aa71-bf23-4a9f-911b-da05feb4e8a4",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 09/12/2024, vencimento 07/01/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "4f804140-a46e-45d2-a467-de65e304af59",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 08/01/2025, vencimento 06/02/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT7960963",
+            "ship": "NAVIO MSC 990",
+            "agent": "AGENTE INTERNACIONAL D",
+            "bl_number": "BL-993948",
+            "original_documents": true,
+            "days_per_period": 13,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250509",
+            "status": "Conclu\u00eddo",
+            "type": "importacao",
+            "ref": "REF-5893/2025",
+            "po": "PO-77073",
+            "origin": "VIETN\u00c3",
+            "product": "M\u00c1QUINAS CNC",
+            "eta": "06/03/2025",
+            "free_time": 8,
+            "free_time_expiry": "14/03/2025",
+            "empty_return": "13/04/2025",
+            "map": "MAP-9015",
+            "invoice_number": "INV-20585",
+            "port_entry_date": "28/02/2025",
+            "current_period_start": "14/04/2025",
+            "current_period_expiry": "13/05/2025",
+            "storage_days": 74,
+            "terminal": "BTP",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "09/01/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-5893/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "01/12/2024",
+                    "description": "Documentos recebidos - REF-5893/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "8ba69405-b1a7-43c9-9d39-afdf9cc63818",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 15/03/2025, vencimento 13/04/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "20544cde-8fe5-406f-adc6-faede730dd27",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 14/04/2025, vencimento 13/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT7739285",
+            "ship": "NAVIO MSC 564",
+            "agent": "AGENTE MAR\u00cdTIMO A",
+            "bl_number": "BL-237175",
+            "original_documents": false,
+            "days_per_period": 14,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250510",
+            "status": "Nacionalizado",
+            "type": "importacao",
+            "ref": "REF-2573/2025",
+            "po": "PO-44984",
+            "origin": "ALEMANHA",
+            "product": "ALIMENTOS",
+            "eta": "08/12/2024",
+            "free_time": 28,
+            "free_time_expiry": "05/01/2025",
+            "empty_return": "31/12/2024",
+            "map": "MAP-1727",
+            "invoice_number": "INV-97404",
+            "port_entry_date": "28/02/2025",
+            "current_period_start": "09/04/2025",
+            "current_period_expiry": "08/05/2025",
+            "storage_days": 74,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "23/11/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-2573/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "13/12/2024",
+                    "description": "Documentos recebidos - REF-2573/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "494260dd-095d-4145-9367-8ab8ef050ce4",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 10/03/2025, vencimento 08/04/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "3bb7bec4-c127-491b-8ac3-2e4071d95e66",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 09/04/2025, vencimento 08/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT6890310",
+            "ship": "NAVIO COSCO 864",
+            "agent": "AGENTE LOG\u00cdSTICO A",
+            "bl_number": "BL-526062",
+            "original_documents": false,
+            "days_per_period": 9,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250511",
+            "status": "Novo Processo",
+            "type": "importacao",
+            "ref": "REF-8249/2025",
+            "po": "PO-47507",
+            "origin": "EUA",
+            "product": "FLONEX 9004 S",
+            "eta": "03/08/2025",
+            "free_time": 20,
+            "free_time_expiry": "23/08/2025",
+            "empty_return": "10/09/2025",
+            "map": "MAP-1642",
+            "invoice_number": "INV-83992",
+            "port_entry_date": "21/12/2024",
+            "current_period_start": "05/02/2025",
+            "current_period_expiry": "06/03/2025",
+            "storage_days": 143,
+            "terminal": "PORTONAVE",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "22/03/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-8249/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "25/04/2025",
+                    "description": "Documentos recebidos - REF-8249/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "1c8521a5-7f47-43bc-b791-2f66fc944386",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 06/01/2025, vencimento 04/02/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "81698980-b522-4a5f-b098-61f8a991f029",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 05/02/2025, vencimento 06/03/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT3430592",
+            "ship": "NAVIO MSC 850",
+            "agent": "AGENTE LOG\u00cdSTICO B",
+            "bl_number": "BL-176639",
+            "original_documents": false,
+            "days_per_period": 15,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250512",
+            "status": "Liberado",
+            "type": "importacao",
+            "ref": "REF-3875/2025",
+            "po": "PO-32241",
+            "origin": "IT\u00c1LIA",
+            "product": "EQUIPAMENTOS INDUSTRIAIS",
+            "eta": "14/01/2025",
+            "free_time": 24,
+            "free_time_expiry": "07/02/2025",
+            "empty_return": "24/02/2025",
+            "map": "MAP-1387",
+            "invoice_number": "INV-23466",
+            "port_entry_date": "14/02/2025",
+            "current_period_start": "26/03/2025",
+            "current_period_expiry": "24/04/2025",
+            "storage_days": 88,
+            "terminal": "SANTOS BRASIL",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "25/04/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-3875/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "09/04/2025",
+                    "description": "Documentos recebidos - REF-3875/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "45e52bbc-61d8-46af-a0fc-a07195de563b",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 24/02/2025, vencimento 25/03/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "e726014a-de2f-46e8-b771-c4e358268cdb",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 26/03/2025, vencimento 24/04/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT2738166",
+            "ship": "NAVIO MSC 480",
+            "agent": "AGENTE MAR\u00cdTIMO C",
+            "bl_number": "BL-999700",
+            "original_documents": true,
+            "days_per_period": 9,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250513",
+            "status": "Aguardando documentos",
+            "type": "importacao",
+            "ref": "REF-1169/2025",
+            "po": "PO-57109",
+            "origin": "ALEMANHA",
+            "product": "ELETR\u00d4NICOS",
+            "eta": "29/11/2024",
+            "free_time": 29,
+            "free_time_expiry": "28/12/2024",
+            "empty_return": "18/12/2024",
+            "map": "MAP-7879",
+            "invoice_number": "INV-68449",
+            "port_entry_date": "20/01/2025",
+            "current_period_start": "06/03/2025",
+            "current_period_expiry": "04/04/2025",
+            "storage_days": 113,
+            "terminal": "SANTOS BRASIL",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "19/11/2024",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-1169/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "02/01/2025",
+                    "description": "Documentos recebidos - REF-1169/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "f4d5a385-b51a-474f-a605-dd986cacf43a",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 04/02/2025, vencimento 05/03/2025",
+                    "user": "Sistema"
+                },
+                {
+                    "id": "5037f6c1-e3b5-47a6-a899-8661dd19e2d5",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 06/03/2025, vencimento 04/04/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT9213987",
+            "ship": "NAVIO HAPAG 377",
+            "agent": "AGENTE LOG\u00cdSTICO D",
+            "bl_number": "BL-576299",
+            "original_documents": true,
+            "days_per_period": 14,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250514",
+            "status": "Em andamento",
+            "type": "importacao",
+            "ref": "REF-3376/2025",
+            "po": "PO-93043",
+            "origin": "CHINA",
+            "product": "M\u00c1QUINAS CNC",
+            "eta": "11/02/2025",
+            "free_time": 15,
+            "free_time_expiry": "26/02/2025",
+            "empty_return": "27/03/2025",
+            "map": "MAP-1370",
+            "invoice_number": "INV-76564",
+            "port_entry_date": "16/04/2025",
+            "current_period_start": "25/04/2025",
+            "current_period_expiry": "24/05/2025",
+            "storage_days": 27,
+            "terminal": "DPW SANTOS",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "28/04/2025",
+                    "description": "Processo importa\u00e7\u00e3o criado - REF-3376/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "23/11/2024",
+                    "description": "Documentos recebidos - REF-3376/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": "dc88471f-1d7c-47cd-9634-9410a76bffbe",
+                    "date": "13/05/2025",
+                    "description": "Per\u00edodo atualizado automaticamente: in\u00edcio 25/04/2025, vencimento 24/05/2025",
+                    "user": "Sistema"
+                }
+            ],
+            "container": "CONT4430479",
+            "ship": "NAVIO HAPAG 986",
+            "agent": "AGENTE INTERNACIONAL C",
+            "bl_number": "BL-776295",
+            "original_documents": true,
+            "days_per_period": 8,
+            "archived": false,
+            "last_update": "13/05/2025"
+        },
+        {
+            "id": "20250600",
+            "status": "Novo Processo",
+            "type": "exportacao",
+            "ref": "EXP-1100/2025",
+            "product": "ALGOD\u00c3O",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR E - COREIA DO SUL",
+            "due_number": "DUE-17611227",
+            "due_date": "16/04/2025",
+            "dispatch_value": 969.33,
+            "knowledge_number": "CE-50494",
+            "knowledge_date": "19/11/2024",
+            "endorsement_date": "27/01/2025",
+            "invoice_number": "EXP-INV-73156",
+            "drawback": true,
+            "originals_sent_date": "11/05/2025",
+            "tracking_number": "TRACK-534400",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "28/11/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-1100/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "27/01/2025",
+                    "description": "Documentos recebidos - EXP-1100/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "27/05/2025",
+            "deadline_draft": "26/05/2025",
+            "shipping_terminal": "DPW SANTOS",
+            "shipping_date": "02/06/2025",
+            "arrival_forecast": "02/07/2025",
+            "redex_clearance": "24/04/2025",
+            "bl_number": "BL-EXP-659794",
+            "container": "CONT7682665",
+            "ship": "NAVIO HAPAG 328"
+        },
+        {
+            "id": "20250601",
+            "status": "Aguardando embarque",
+            "type": "exportacao",
+            "ref": "EXP-9016/2025",
+            "product": "CELULOSE",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR E - TAIL\u00c2NDIA",
+            "due_number": "DUE-13947316",
+            "due_date": "26/01/2025",
+            "dispatch_value": 611.68,
+            "knowledge_number": "CE-86578",
+            "knowledge_date": "28/01/2025",
+            "endorsement_date": "06/05/2025",
+            "invoice_number": "EXP-INV-72431",
+            "drawback": false,
+            "originals_sent_date": "09/05/2025",
+            "tracking_number": "TRACK-198551",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "06/03/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-9016/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "16/11/2024",
+                    "description": "Documentos recebidos - EXP-9016/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "16/05/2025",
+            "deadline_draft": "14/05/2025",
+            "shipping_terminal": "ITAPO\u00c1",
+            "shipping_date": "21/05/2025",
+            "arrival_forecast": "14/06/2025",
+            "redex_clearance": "23/02/2025",
+            "bl_number": "BL-EXP-433359",
+            "container": "CONT5929425",
+            "ship": "NAVIO MSC 515"
+        },
+        {
+            "id": "20250602",
+            "status": "Embarque agendado",
+            "type": "exportacao",
+            "ref": "EXP-6219/2025",
+            "product": "CARNE BOVINA",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR E - JAP\u00c3O",
+            "due_number": "DUE-81551742",
+            "due_date": "09/12/2024",
+            "dispatch_value": 246.43,
+            "knowledge_number": "CE-61931",
+            "knowledge_date": "10/02/2025",
+            "endorsement_date": "14/01/2025",
+            "invoice_number": "EXP-INV-99210",
+            "drawback": true,
+            "originals_sent_date": "05/05/2025",
+            "tracking_number": "TRACK-898059",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "09/03/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-6219/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "24/01/2025",
+                    "description": "Documentos recebidos - EXP-6219/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "TERMINAL ROCHA",
+            "client_delivery_date": "21/12/2024",
+            "carrier": "TRANSP. GLOBAL C"
+        },
+        {
+            "id": "20250603",
+            "status": "Documentos enviados",
+            "type": "exportacao",
+            "ref": "EXP-6786/2025",
+            "product": "A\u00c7\u00daCAR",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR B - JAP\u00c3O",
+            "due_number": "DUE-12907047",
+            "due_date": "18/03/2025",
+            "dispatch_value": 790.69,
+            "knowledge_number": "CE-42574",
+            "knowledge_date": "13/04/2025",
+            "endorsement_date": "05/03/2025",
+            "invoice_number": "EXP-INV-94082",
+            "drawback": true,
+            "originals_sent_date": "16/04/2025",
+            "tracking_number": "TRACK-586061",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "14/01/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-6786/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "22/12/2024",
+                    "description": "Documentos recebidos - EXP-6786/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "09/07/2025",
+            "deadline_draft": "03/07/2025",
+            "shipping_terminal": "TCP",
+            "shipping_date": "14/07/2025",
+            "arrival_forecast": "11/08/2025",
+            "redex_clearance": "10/03/2025",
+            "bl_number": "BL-EXP-411591",
+            "container": "CONT6316429",
+            "ship": "NAVIO HAPAG 988"
+        },
+        {
+            "id": "20250604",
+            "status": "Em desembara\u00e7o",
+            "type": "exportacao",
+            "ref": "EXP-9229/2025",
+            "product": "ALGOD\u00c3O",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR E - TAIL\u00c2NDIA",
+            "due_number": "DUE-27393118",
+            "due_date": "25/11/2024",
+            "dispatch_value": 665.81,
+            "knowledge_number": "CE-83732",
+            "knowledge_date": "27/03/2025",
+            "endorsement_date": "09/02/2025",
+            "invoice_number": "EXP-INV-18703",
+            "drawback": false,
+            "originals_sent_date": "04/05/2025",
+            "tracking_number": "TRACK-640246",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "27/02/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-9229/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "05/05/2025",
+                    "description": "Documentos recebidos - EXP-9229/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "TERMINAL ROCHA",
+            "client_delivery_date": "23/02/2025",
+            "carrier": "TRANSP. R\u00c1PIDA B"
+        },
+        {
+            "id": "20250605",
+            "status": "Embarque agendado",
+            "type": "exportacao",
+            "ref": "EXP-5784/2025",
+            "product": "ALGOD\u00c3O",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR D - COREIA DO SUL",
+            "due_number": "DUE-61053359",
+            "due_date": "13/01/2025",
+            "dispatch_value": 301.64,
+            "knowledge_number": "CE-55587",
+            "knowledge_date": "21/12/2024",
+            "endorsement_date": "10/12/2024",
+            "invoice_number": "EXP-INV-54863",
+            "drawback": false,
+            "originals_sent_date": "16/04/2025",
+            "tracking_number": "TRACK-810743",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "23/11/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-5784/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "14/04/2025",
+                    "description": "Documentos recebidos - EXP-5784/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "01/08/2025",
+            "deadline_draft": "25/07/2025",
+            "shipping_terminal": "BTP",
+            "shipping_date": "04/08/2025",
+            "arrival_forecast": "11/09/2025",
+            "redex_clearance": "20/03/2025",
+            "bl_number": "BL-EXP-642426",
+            "container": "CONT7951572",
+            "ship": "NAVIO MAERSK 300"
+        },
+        {
+            "id": "20250606",
+            "status": "Em andamento",
+            "type": "exportacao",
+            "ref": "EXP-4186/2025",
+            "product": "MILHO",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR E - \u00cdNDIA",
+            "due_number": "DUE-82017080",
+            "due_date": "02/04/2025",
+            "dispatch_value": 798.52,
+            "knowledge_number": "CE-63413",
+            "knowledge_date": "09/03/2025",
+            "endorsement_date": "30/04/2025",
+            "invoice_number": "EXP-INV-94859",
+            "drawback": false,
+            "originals_sent_date": "25/04/2025",
+            "tracking_number": "TRACK-839672",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "02/12/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-4186/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "06/12/2024",
+                    "description": "Documentos recebidos - EXP-4186/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "TERMINAL ROCHA",
+            "client_delivery_date": "01/03/2025",
+            "carrier": "TRANSP. EXPRESSA C"
+        },
+        {
+            "id": "20250607",
+            "status": "Documentos enviados",
+            "type": "exportacao",
+            "ref": "EXP-6934/2025",
+            "product": "AUTOM\u00d3VEIS",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR C - ALEMANHA",
+            "due_number": "DUE-64698165",
+            "due_date": "03/02/2025",
+            "dispatch_value": 234.72,
+            "knowledge_number": "CE-73485",
+            "knowledge_date": "04/01/2025",
+            "endorsement_date": "22/12/2024",
+            "invoice_number": "EXP-INV-74431",
+            "drawback": true,
+            "originals_sent_date": "20/04/2025",
+            "tracking_number": "TRACK-613026",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "30/04/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-6934/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "18/04/2025",
+                    "description": "Documentos recebidos - EXP-6934/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "TERMINAL ROCHA",
+            "client_delivery_date": "09/03/2025",
+            "carrier": "TRANSP. INTERNACIONAL B"
+        },
+        {
+            "id": "20250608",
+            "status": "Documentos enviados",
+            "type": "exportacao",
+            "ref": "EXP-3118/2025",
+            "product": "AERONAVES",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR A - COREIA DO SUL",
+            "due_number": "DUE-95389678",
+            "due_date": "23/11/2024",
+            "dispatch_value": 633.94,
+            "knowledge_number": "CE-60332",
+            "knowledge_date": "15/04/2025",
+            "endorsement_date": "09/05/2025",
+            "invoice_number": "EXP-INV-60594",
+            "drawback": true,
+            "originals_sent_date": "02/05/2025",
+            "tracking_number": "TRACK-521424",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "31/01/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-3118/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "10/01/2025",
+                    "description": "Documentos recebidos - EXP-3118/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "CLIA CAMPINAS",
+            "client_delivery_date": "02/07/2025",
+            "carrier": "TRANSP. R\u00c1PIDA B"
+        },
+        {
+            "id": "20250609",
+            "status": "Embarcado",
+            "type": "exportacao",
+            "ref": "EXP-1550/2025",
+            "product": "A\u00c7\u00daCAR",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR C - ALEMANHA",
+            "due_number": "DUE-14309525",
+            "due_date": "03/03/2025",
+            "dispatch_value": 345.03,
+            "knowledge_number": "CE-17398",
+            "knowledge_date": "01/12/2024",
+            "endorsement_date": "28/02/2025",
+            "invoice_number": "EXP-INV-82154",
+            "drawback": false,
+            "originals_sent_date": "26/04/2025",
+            "tracking_number": "TRACK-956059",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "16/01/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-1550/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "15/01/2025",
+                    "description": "Documentos recebidos - EXP-1550/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "16/06/2025",
+            "deadline_draft": "12/06/2025",
+            "shipping_terminal": "PORTONAVE",
+            "shipping_date": "19/06/2025",
+            "arrival_forecast": "08/07/2025",
+            "redex_clearance": "10/04/2025",
+            "bl_number": "BL-EXP-705941",
+            "container": "CONT8498831",
+            "ship": "NAVIO STAR 555"
+        },
+        {
+            "id": "20250610",
+            "status": "Aguardando documentos",
+            "type": "exportacao",
+            "ref": "EXP-8624/2025",
+            "product": "A\u00c7\u00daCAR",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR C - TAIL\u00c2NDIA",
+            "due_number": "DUE-49796002",
+            "due_date": "17/01/2025",
+            "dispatch_value": 418.9,
+            "knowledge_number": "CE-73185",
+            "knowledge_date": "29/01/2025",
+            "endorsement_date": "15/12/2024",
+            "invoice_number": "EXP-INV-82486",
+            "drawback": false,
+            "originals_sent_date": "07/05/2025",
+            "tracking_number": "TRACK-352789",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "10/03/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-8624/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "11/02/2025",
+                    "description": "Documentos recebidos - EXP-8624/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "CLIA GUARULHOS",
+            "client_delivery_date": "25/05/2025",
+            "carrier": "TRANSP. INTERNACIONAL C"
+        },
+        {
+            "id": "20250611",
+            "status": "Aguardando embarque",
+            "type": "exportacao",
+            "ref": "EXP-9062/2025",
+            "product": "MIN\u00c9RIO DE FERRO",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR A - EUA",
+            "due_number": "DUE-18210711",
+            "due_date": "03/02/2025",
+            "dispatch_value": 470.32,
+            "knowledge_number": "CE-55929",
+            "knowledge_date": "15/03/2025",
+            "endorsement_date": "21/03/2025",
+            "invoice_number": "EXP-INV-69770",
+            "drawback": false,
+            "originals_sent_date": "29/04/2025",
+            "tracking_number": "TRACK-137689",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "29/03/2025",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-9062/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "24/04/2025",
+                    "description": "Documentos recebidos - EXP-9062/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "CLIA GUARULHOS",
+            "client_delivery_date": "20/06/2025",
+            "carrier": "TRANSP. EXPRESSA B"
+        },
+        {
+            "id": "20250612",
+            "status": "Aguardando embarque",
+            "type": "exportacao",
+            "ref": "EXP-8069/2025",
+            "product": "QU\u00cdMICOS INDUSTRIAIS",
+            "export_type": "rodoviaria",
+            "importer": "IMPORTADOR E - COREIA DO SUL",
+            "due_number": "DUE-44371100",
+            "due_date": "29/01/2025",
+            "dispatch_value": 775.85,
+            "knowledge_number": "CE-56205",
+            "knowledge_date": "09/02/2025",
+            "endorsement_date": "22/12/2024",
+            "invoice_number": "EXP-INV-40625",
+            "drawback": false,
+            "originals_sent_date": "25/04/2025",
+            "tracking_number": "TRACK-173960",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "26/11/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-8069/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "15/03/2025",
+                    "description": "Documentos recebidos - EXP-8069/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cross_terminal": "CLIA GUARULHOS",
+            "client_delivery_date": "20/02/2025",
+            "carrier": "TRANSP. R\u00c1PIDA B"
+        },
+        {
+            "id": "20250613",
+            "status": "Embarque agendado",
+            "type": "exportacao",
+            "ref": "EXP-4256/2025",
+            "product": "CAF\u00c9",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR A - CHINA",
+            "due_number": "DUE-50206843",
+            "due_date": "01/01/2025",
+            "dispatch_value": 464.21,
+            "knowledge_number": "CE-33751",
+            "knowledge_date": "26/12/2024",
+            "endorsement_date": "27/11/2024",
+            "invoice_number": "EXP-INV-15706",
+            "drawback": false,
+            "originals_sent_date": "01/05/2025",
+            "tracking_number": "TRACK-210494",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "21/12/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-4256/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "16/01/2025",
+                    "description": "Documentos recebidos - EXP-4256/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "11/05/2025",
+            "deadline_draft": "03/05/2025",
+            "shipping_terminal": "DPW SANTOS",
+            "shipping_date": "14/05/2025",
+            "arrival_forecast": "27/06/2025",
+            "redex_clearance": "07/04/2025",
+            "bl_number": "BL-EXP-135674",
+            "container": "CONT6559617",
+            "ship": "NAVIO COSCO 787"
+        },
+        {
+            "id": "20250614",
+            "status": "Liberado",
+            "type": "exportacao",
+            "ref": "EXP-8989/2025",
+            "product": "CARNE BOVINA",
+            "export_type": "maritima",
+            "importer": "IMPORTADOR C - VIETN\u00c3",
+            "due_number": "DUE-83885394",
+            "due_date": "09/04/2025",
+            "dispatch_value": 802.14,
+            "knowledge_number": "CE-55832",
+            "knowledge_date": "15/04/2025",
+            "endorsement_date": "04/04/2025",
+            "invoice_number": "EXP-INV-14644",
+            "drawback": false,
+            "originals_sent_date": "19/04/2025",
+            "tracking_number": "TRACK-660259",
+            "events": [
+                {
+                    "id": 1,
+                    "date": "20/12/2024",
+                    "description": "Processo exporta\u00e7\u00e3o criado - EXP-8989/2025",
+                    "user": "admin"
+                },
+                {
+                    "id": 2,
+                    "date": "23/04/2025",
+                    "description": "Documentos recebidos - EXP-8989/2025",
+                    "user": "admin"
+                }
+            ],
+            "archived": false,
+            "cargo_deadline": "29/07/2025",
+            "deadline_draft": "23/07/2025",
+            "shipping_terminal": "TCP",
+            "shipping_date": "05/08/2025",
+            "arrival_forecast": "20/08/2025",
+            "redex_clearance": "30/12/2024",
+            "bl_number": "BL-EXP-976667",
+            "container": "CONT9643915",
+            "ship": "NAVIO MAERSK 201"
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+/* Estilos responsivos para dispositivos móveis */
+@media only screen and (max-width: 767px) {
+    body {
+        padding: 8px !important;
+        margin: 0 !important;
+        font-size: 14px !important;
+    }
+    
+    .container {
+        padding: 10px !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .jgr-logo {
+        max-width: 180px !important;
+    }
+    
+    h1 {
+        font-size: 1.4em !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 8px !important;
+    }
+    
+    .header {
+        margin-bottom: 10px !important;
+    }
+    
+    .header > div {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+    
+    .header > div > div {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+    }
+    
+    table {
+        display: block !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        font-size: 0.85em !important;
+        border-collapse: collapse !important;
+    }
+    
+    table th, table td {
+        padding: 6px !important;
+        font-size: 12px !important;
+    }
+    
+    .filter-container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px !important;
+    }
+    
+    .filter-input {
+        width: 100% !important;
+        margin-top: 5px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .status-filter {
+        flex-wrap: wrap !important;
+        margin-top: 10px !important;
+        justify-content: flex-start !important;
+    }
+    
+    .status-badge, .status-count-item {
+        margin-bottom: 5px !important;
+        font-size: 0.8em !important;
+        padding: 4px 6px !important;
+    }
+    
+    .detail-section {
+        padding: 10px !important;
+    }
+    
+    .pagination {
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+    }
+    
+    .pagination-button {
+        margin: 2px !important;
+        padding: 5px 8px !important;
+        font-size: 12px !important;
+    }
+    
+    .tabs {
+        flex-wrap: wrap !important;
+    }
+    
+    .tabs button {
+        padding: 6px 8px !important;
+        font-size: 0.9em !important;
+        margin-bottom: 5px !important;
+        flex-grow: 1 !important;
+    }
+    
+    .close-details {
+        font-size: 1.2em !important;
+        padding: 2px 8px !important;
+        right: 5px !important;
+        top: 5px !important;
+    }
+    
+    .details-row td {
+        padding: 5px !important;
+    }
+    
+    /* Esconder colunas menos importantes em dispositivos móveis */
+    table th:nth-child(4), 
+    table td:nth-child(4),
+    table th:nth-child(6), 
+    table td:nth-child(6),
+    table th:nth-child(12), 
+    table td:nth-child(12) {
+        display: none !important;
+    }
+}

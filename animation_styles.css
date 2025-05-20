@@ -1,0 +1,122 @@
+/* 
+ * Estilos para Micro-Interaction Feedback Animations 
+ * Animações sutis para feedback visual nos relatórios HTML
+ */
+
+/* Animação de pulsação para botões e badges */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* Animação de elevação para hover em badges */
+.hover-lift {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+/* Animação de transformação para hover em botões */
+.hover-transform {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+/* Animação para destaque de linhas da tabela */
+@keyframes highlightRow {
+    0% { background-color: rgba(44, 62, 80, 0.05); }
+    50% { background-color: rgba(44, 62, 80, 0.1); }
+    100% { background-color: rgba(44, 62, 80, 0.05); }
+}
+
+.row-highlight-animation {
+    animation: highlightRow 0.3s ease-in-out;
+}
+
+/* Animação para input de filtro com foco */
+.input-focus-animation {
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
+    transition: all 0.2s ease;
+}
+
+/* Animação para digitação em inputs */
+@keyframes typing {
+    0% { border-color: rgba(44, 62, 80, 0.3); }
+    50% { border-color: rgba(44, 62, 80, 0.7); }
+    100% { border-color: rgba(44, 62, 80, 0.3); }
+}
+
+.input-typing-animation {
+    animation: typing 0.3s ease-in-out;
+}
+
+/* Animações para expandir/colapsar detalhes */
+@keyframes expandDetails {
+    0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+}
+
+@keyframes collapseDetails {
+    0% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+}
+
+.expand-animation {
+    animation: expandDetails 0.3s ease-in-out;
+}
+
+.collapse-animation {
+    animation: collapseDetails 0.3s ease-in-out;
+}
+
+/* Animação para status badges ao selecionar */
+@keyframes statusSelect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.status-badge.selected, .status-count-item.selected {
+    animation: statusSelect 0.3s ease-in-out;
+}
+
+/* Transições suaves para todos os elementos interativos */
+.tabs button, .pagination-button, .status-badge, .status-count-item, 
+.filter-input, .close-details, table tr, .expand-btn {
+    transition: all 0.2s ease;
+}
+
+/* Efeito de ondulação (ripple) para cliques em botões */
+.tabs button, .pagination-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.tabs button::after, .pagination-button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.tabs button:active::after, .pagination-button:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}

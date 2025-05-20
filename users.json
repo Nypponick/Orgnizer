@@ -1,0 +1,65 @@
+{
+    "users": [
+        {
+            "id": "admin-001",
+            "name": "Administrador",
+            "email": "admin",
+            "password": "admin",
+            "role": "admin"
+        },
+        {
+            "id": "client-001",
+            "name": "Cliente Demonstra\u00e7\u00e3o",
+            "email": "cliente@teste.com",
+            "password": "senha",
+            "role": "client",
+            "processes": [
+                "20250001",
+                "1111",
+                "20250002",
+                "20250004"
+            ],
+            "logo_path": "assets/client_logos/logo_20250515171547.png",
+            "updated_at": "2025-05-15T17:15:47.878859"
+        },
+        {
+            "id": "520c8a5e",
+            "name": "mk",
+            "email": "teste@mk.com.br",
+            "password": "importacao123",
+            "role": "admin",
+            "created_at": "2025-05-09T16:51:54.897249"
+        },
+        {
+            "id": "150fdf8d",
+            "name": "novoteste",
+            "email": "emaildeteste",
+            "password": "teste",
+            "role": "client",
+            "created_at": "2025-05-09T16:56:45.083292",
+            "processes": [
+                "123",
+                "1111111111111111"
+            ],
+            "updated_at": "2025-05-09T16:57:50.610885"
+        },
+        {
+            "id": "8119c925",
+            "name": "Novocliente",
+            "email": "novocliente@novocliente.com",
+            "password": "teste123",
+            "role": "client",
+            "created_at": "2025-05-09T17:59:26.307294",
+            "processes": [],
+            "updated_at": "2025-05-11T18:59:42.798443"
+        },
+        {
+            "id": "bda12900",
+            "name": "logincliente",
+            "email": "emailcliente",
+            "password": "senhacliente",
+            "role": "client",
+            "created_at": "2025-05-15T16:58:52.191822"
+        }
+    ]
+}

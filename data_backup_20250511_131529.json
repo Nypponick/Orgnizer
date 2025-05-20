@@ -1,0 +1,197 @@
+{
+    "processes": [
+        {
+            "id": "20250001",
+            "ref": "IMJ-0132/25",
+            "invoice": "7226206",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "40",
+            "eta": "16/06/2025",
+            "status": "Em andamento",
+            "observations": "",
+            "exporter": "Snf-China",
+            "ship": "HYUNDAI PLATINUM",
+            "agent": "ONE",
+            "bl_number": "ONEYSH5EZ0204600",
+            "container": "TLLUI7004112",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "23/06/2025",
+            "po": "2025/078",
+            "product": "FLONEX 9004 SI",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "11/05/2025",
+            "events": [
+                {
+                    "id": "fb1caea3-a4ac-4254-a54e-3979128f7b71",
+                    "date": "11/05/2025",
+                    "description": "Processo arquivado",
+                    "user": "Admin"
+                },
+                {
+                    "id": "32b83b93-5bf7-4614-ac8a-1a4329b90164",
+                    "date": "11/05/2025",
+                    "description": "Processo reativado",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "1111",
+            "ref": "11111111111111111111111111",
+            "invoice": "11111111111111",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Em andamento",
+            "observations": "11111111111111111111111111111111111111111",
+            "exporter": "1111",
+            "ship": "111111111111111",
+            "agent": "11111111111111111111111111111111111111111111111",
+            "bl_number": "11111111111111111111111111111111111111111",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "1111111111111111",
+            "di": "11111111111111111111111",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "111111111111",
+            "product": "1111111111111",
+            "map": "1111111111111111",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "10/05/2025",
+            "events": [
+                {
+                    "date": "10/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin",
+                    "id": "18822ceb-de44-4ddb-87da-faefe493ff36"
+                },
+                {
+                    "id": "0c36d5fe-58a3-4a2c-b88d-6df9b5c0f609",
+                    "date": "10/05/2025",
+                    "description": "Processo atribu\u00eddo ao cliente Cliente Demonstra\u00e7\u00e3o",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "232323",
+            "ref": "23232",
+            "invoice": "2323232323",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Novo Processo",
+            "observations": "",
+            "exporter": "3232",
+            "ship": "32323",
+            "agent": "232323232",
+            "bl_number": "2323232323",
+            "container": "23",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "323",
+            "product": "232",
+            "map": "3232323232",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "10/05/2025",
+            "events": [
+                {
+                    "date": "10/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin",
+                    "id": "e25d5525-4f90-4725-b387-e02de27a4ed9"
+                },
+                {
+                    "id": "798c15c5-01c6-4640-836f-2807ebbe43ff",
+                    "date": "10/05/2025",
+                    "description": "Processo arquivado",
+                    "user": "Admin"
+                },
+                {
+                    "id": "95335d10-30b3-414c-aa2e-1300fc8a4809",
+                    "date": "10/05/2025",
+                    "description": "Processo reativado",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        },
+        {
+            "id": "20250002",
+            "ref": "",
+            "invoice": "",
+            "origin": "CHINA",
+            "type": "importacao",
+            "container_type": "FCL 1 X 40",
+            "eta": "",
+            "status": "Chegada do navio alterada",
+            "observations": "",
+            "exporter": "",
+            "ship": "",
+            "agent": "",
+            "bl_number": "",
+            "container": "",
+            "terminal": "",
+            "invoice_number": "",
+            "di": "",
+            "free_time": "7",
+            "free_time_expiry": "",
+            "po": "",
+            "product": "",
+            "map": "",
+            "port_entry_date": "",
+            "current_period_start": "",
+            "current_period_expiry": "",
+            "storage_days": "0",
+            "original_docs": "Sim",
+            "empty_return": "",
+            "last_update": "10/05/2025",
+            "events": [
+                {
+                    "date": "10/05/2025",
+                    "description": "Processo criado",
+                    "user": "Admin",
+                    "id": "55de2be2-aa58-48bb-8cac-4cef7ae52257"
+                },
+                {
+                    "id": "5f70a499-10cc-46e3-bc0c-e2fb0bd970ff",
+                    "date": "10/05/2025",
+                    "description": "Chegada do navio alterada de 10.03 para 15.03 ",
+                    "user": "Admin"
+                }
+            ],
+            "archived": false
+        }
+    ],
+    "config": {
+        "storage_days_per_period": 15
+    }
+}

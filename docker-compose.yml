@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  streamlit-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data.json:/app/data.json
+      - ./users.json:/app/users.json
+      - ./html_exports:/app/html_exports
+      - ./data.py:/app/data.py    # Garante que o arquivo data.py esteja atualizado
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1  # Para melhorar a legibilidade dos logs
+      - PYTHONPATH=/app     # Configura o PYTHONPATH para incluir o diretório raiz

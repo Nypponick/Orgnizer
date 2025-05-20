@@ -1,0 +1,52 @@
+{
+    "status_config": [
+        {
+            "name": "Novo Processo",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Em andamento",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Pendente",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Conclu\u00eddo",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Navio em Santos",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Status de teste",
+            "process_types": [
+                "importacao",
+                "exportacao"
+            ]
+        },
+        {
+            "name": "Status de teste - Exporta\u00e7\u00e3o",
+            "process_types": [
+                "exportacao"
+            ]
+        }
+    ]
+}
