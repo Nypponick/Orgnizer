@@ -6,6 +6,13 @@ import uuid
 from datetime import datetime
 from utils import format_date
 
+# Verificar se o módulo sheets_data está disponível
+try:
+    import sheets_data
+    SHEETS_AVAILABLE = True
+except ImportError:
+    SHEETS_AVAILABLE = False
+
 # Default data structure based on the screenshots
 DEFAULT_DATA = {
     "company_info": {
@@ -98,11 +105,32 @@ DEFAULT_DATA = {
 def load_data():
     """Load data from file or return default data"""
     try:
+        # Verificar se devemos usar o Google Sheets
+        use_sheets = st.session_state.get('use_google_sheets', False)
+        
+        if use_sheets and SHEETS_AVAILABLE:
+            # Tentar carregar do Google Sheets
+            try:
+                print("Tentando carregar dados do Google Sheets...")
+                import sheets_data  # Importação local para garantir disponibilidade
+                sheets_status = sheets_data.get_sync_status()
+                
+                if sheets_status["connected"]:
+                    data = sheets_data.load_from_sheets()
+                    st.session_state['last_data_source'] = 'sheets'
+                    return data
+            except Exception as e:
+                print(f"Erro ao carregar do Google Sheets: {str(e)}")
+                st.error(f"Não foi possível carregar dados do Google Sheets. Usando dados locais.")
+        
+        # Se não estiver usando Sheets ou falhar, usar arquivo local
         if os.path.exists("data.json"):
             with open("data.json", "r") as f:
                 data = json.load(f)
+                st.session_state['last_data_source'] = 'local'
         else:
             data = DEFAULT_DATA
+            st.session_state['last_data_source'] = 'default'
             
         # Garantir que todos os processos tenham campos necessários
         periods_updated = []  # Lista para acompanhar quais processos tiveram períodos atualizados
@@ -178,13 +206,37 @@ def load_data():
 
 def save_data(data):
     """Save data to file"""
+    success = True
+    
+    # Sempre salvar localmente como backup
     try:
         with open("data.json", "w") as f:
             json.dump(data, f, indent=4)
-        return True
     except Exception as e:
-        st.error(f"Erro ao salvar dados: {e}")
-        return False
+        st.error(f"Erro ao salvar dados no arquivo local: {e}")
+        success = False
+    
+    # Verificar se devemos usar o Google Sheets
+    use_sheets = st.session_state.get('use_google_sheets', False)
+    
+    if use_sheets and SHEETS_AVAILABLE:
+        try:
+            print("Tentando salvar dados no Google Sheets...")
+            import sheets_data  # Importação local para garantir disponibilidade
+            sheets_status = sheets_data.get_sync_status()
+            
+            if sheets_status["connected"]:
+                sheets_success = sheets_data.save_to_sheets(data)
+                if sheets_success:
+                    print("Dados salvos com sucesso no Google Sheets.")
+                else:
+                    print("Erro ao salvar dados no Google Sheets.")
+                    success = False
+        except Exception as e:
+            print(f"Erro ao salvar no Google Sheets: {str(e)}")
+            success = False
+    
+    return success
 
 def get_process_by_id(process_id):
     """Get a process by ID"""
@@ -548,6 +600,8 @@ def get_processes_df(include_archived=False):
     
     # Garantir que storage_days seja numérico para todos os processos
     if 'storage_days' in df.columns:
+        # Converter para string primeiro e depois para numérico para evitar erros com tipos incompatíveis
+        df['storage_days'] = df['storage_days'].astype(str)
         df['storage_days'] = pd.to_numeric(df['storage_days'], errors='coerce').fillna(0).astype(int)
     
     # Select columns for main table view (removido "id" conforme solicitado)

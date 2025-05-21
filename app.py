@@ -29,6 +29,7 @@ from components.share import display_share_interface, validate_share_token
 from components.settings import display_settings
 from components.auth import display_login, display_user_management, init_auth_state, logout
 from components.archived import display_archived_processes
+from components.data_sync import display_data_sync
 from data import load_data, save_data
 from assets.stock_photos import get_random_image
 import sheets_to_html
@@ -130,7 +131,7 @@ with col3:
 
 # Navigation bar - Mostra todos os botões para administradores
 if st.session_state.user_role == "admin":
-    nav_col1, nav_col2, nav_col3, nav_col4, nav_col5, nav_col6, nav_col7 = st.columns(7)
+    nav_col1, nav_col2, nav_col3, nav_col4, nav_col5, nav_col6, nav_col7, nav_col8 = st.columns(8)
     with nav_col1:
         if st.button("📋 Painel", use_container_width=True):
             navigate_to("home")
@@ -148,9 +149,12 @@ if st.session_state.user_role == "admin":
         if st.button("📊 Importar Planilha", use_container_width=True):
             navigate_to("reports")
     with nav_col6:
+        if st.button("🔄 Sincronizar Dados", use_container_width=True):
+            navigate_to("data_sync")
+    with nav_col7:
         if st.button("⚙️ Configurações", use_container_width=True):
             navigate_to("settings")
-    with nav_col7:
+    with nav_col8:
         if st.button("👥 Usuários", use_container_width=True):
             navigate_to("users")
 else:
@@ -228,6 +232,13 @@ elif st.session_state.current_page == "archived":
     # Somente admin pode ver processos arquivados
     if st.session_state.user_role == 'admin':
         display_archived_processes(navigate_to)
+    else:
+        st.error("Você não tem permissão para acessar esta página.")
+        navigate_to("home")
+elif st.session_state.current_page == "data_sync":
+    # Somente admin pode sincronizar dados
+    if st.session_state.user_role == 'admin':
+        display_data_sync()
     else:
         st.error("Você não tem permissão para acessar esta página.")
         navigate_to("home")
