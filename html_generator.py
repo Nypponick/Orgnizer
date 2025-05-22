@@ -478,7 +478,7 @@ def get_jgr_logo_base64():
         return base64.b64encode(img_file.read()).decode('utf-8')
 
 
-def generate_processes_table_html(filtered_df=None, process_ids=None, include_details=True, client_filter=None, client_name=None, client_logo=None, archived=False):
+def generate_processes_table_html(filtered_df=None, process_ids=None, include_details=True, client_filter=None, client_name=None, client_logo=None, archived=False, user_role=None):
     """
     Gera um arquivo HTML contendo uma tabela de processos com funcionalidade de expansão de detalhes.
     

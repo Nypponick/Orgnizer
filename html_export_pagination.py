@@ -10,7 +10,7 @@ from data import get_processes_df
 from html_generator import generate_processes_table_html, get_download_link
 from html_post_processor import process_html_file
 
-def export_html_with_pagination(filtered_df=None, process_ids=None, title="Relatório de Processos", include_details=True, client_name=None, client_logo=None, archived=False):
+def export_html_with_pagination(filtered_df=None, process_ids=None, title="Relatório de Processos", include_details=True, client_name=None, client_logo=None, archived=False, user_role=None):
     """
     Gera um arquivo HTML com a tabela de processos e adiciona paginação, mantendo o visual original.
     A versão responsiva para dispositivos móveis é automaticamente incluída.
@@ -27,14 +27,28 @@ def export_html_with_pagination(filtered_df=None, process_ids=None, title="Relat
     Returns:
         tuple: (caminho do arquivo gerado, URL relativo)
     """
-    # Primeiro geramos o HTML normal utilizando a função original
+    # Para exportação HTML, devemos usar todos os processos ou apenas os filtrados pelo cliente
+    # Não aplicamos a restrição do gestor aqui, pois queremos seguir a lógica baseada em cliente
+    if filtered_df is None and not process_ids:
+        import streamlit as st
+        user_id = st.session_state.user_id if 'user_id' in st.session_state else None
+        user_role = st.session_state.user_role if 'user_role' in st.session_state else None
+        
+        # Obter todos os processos para HTML (sem filtro de gestor)
+        filtered_df = get_processes_df(include_archived=archived, 
+                                       user_id=user_id, 
+                                       user_role=user_role, 
+                                       html_export=True)
+    
+    # Geramos o HTML normal utilizando a função original
     filepath, filename = generate_processes_table_html(
         filtered_df=filtered_df,
         process_ids=process_ids,
         include_details=include_details,
         client_name=client_name,
         client_logo=client_logo,
-        archived=archived
+        archived=archived,
+        user_role=user_role
     )
     
     # Verificar se o arquivo foi gerado com sucesso

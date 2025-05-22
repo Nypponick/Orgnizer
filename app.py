@@ -30,6 +30,7 @@ from components.settings import display_settings
 from components.auth import display_login, display_user_management, init_auth_state, logout
 from components.archived import display_archived_processes
 from components.data_sync import display_data_sync
+from components.backup import display_backup_page
 from data import load_data, save_data
 from assets.stock_photos import get_random_image
 import sheets_to_html
@@ -131,7 +132,7 @@ with col3:
 
 # Navigation bar - Mostra todos os botões para administradores
 if st.session_state.user_role == "admin":
-    nav_col1, nav_col2, nav_col3, nav_col4, nav_col5, nav_col6, nav_col7, nav_col8 = st.columns(8)
+    nav_col1, nav_col2, nav_col3, nav_col4, nav_col5, nav_col6, nav_col7, nav_col8, nav_col9 = st.columns(9)
     with nav_col1:
         if st.button("📋 Painel", use_container_width=True):
             navigate_to("home")
@@ -152,11 +153,30 @@ if st.session_state.user_role == "admin":
         if st.button("🔄 Sincronizar Dados", use_container_width=True):
             navigate_to("data_sync")
     with nav_col7:
+        if st.button("💾 Backup", use_container_width=True):
+            navigate_to("backup")
+    with nav_col8:
         if st.button("⚙️ Configurações", use_container_width=True):
             navigate_to("settings")
-    with nav_col8:
+    with nav_col9:
         if st.button("👥 Usuários", use_container_width=True):
             navigate_to("users")
+elif st.session_state.user_role == "manager":
+    # Para gestores, mostrar painel, adicionar, backup e sincronização
+    nav_col1, nav_col2, nav_col3, nav_col4 = st.columns(4)
+    with nav_col1:
+        if st.button("📋 Painel", use_container_width=True):
+            navigate_to("home")
+    with nav_col2:
+        if st.button("➕ Novo Processo", use_container_width=True):
+            st.session_state.edit_mode = False
+            navigate_to("add_edit")
+    with nav_col3:
+        if st.button("💾 Backup", use_container_width=True):
+            navigate_to("backup")
+    with nav_col4:
+        if st.button("🔄 Sincronizar Dados", use_container_width=True):
+            navigate_to("data_sync")
 else:
     # Para clientes, apenas mostrar o botão de painel
     if st.button("📋 Painel", use_container_width=True):
@@ -236,9 +256,17 @@ elif st.session_state.current_page == "archived":
         st.error("Você não tem permissão para acessar esta página.")
         navigate_to("home")
 elif st.session_state.current_page == "data_sync":
-    # Somente admin pode sincronizar dados
-    if st.session_state.user_role == 'admin':
+    # Admin e gestores podem sincronizar dados
+    if st.session_state.user_role in ['admin', 'manager']:
         display_data_sync()
+    else:
+        st.error("Você não tem permissão para acessar esta página.")
+        navigate_to("home")
+        
+elif st.session_state.current_page == "backup":
+    # Admin e gestores podem acessar backup
+    if st.session_state.user_role in ['admin', 'manager']:
+        display_backup_page()
     else:
         st.error("Você não tem permissão para acessar esta página.")
         navigate_to("home")

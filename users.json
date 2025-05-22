@@ -17,7 +17,8 @@
                 "20250001",
                 "1111",
                 "20250002",
-                "20250004"
+                "20250004",
+                "teste"
             ],
             "logo_path": "assets/client_logos/logo_20250515171547.png",
             "updated_at": "2025-05-15T17:15:47.878859"
@@ -39,7 +40,8 @@
             "created_at": "2025-05-09T16:56:45.083292",
             "processes": [
                 "123",
-                "1111111111111111"
+                "1111111111111111",
+                "c"
             ],
             "updated_at": "2025-05-09T16:57:50.610885"
         },
@@ -59,7 +61,80 @@
             "email": "emailcliente",
             "password": "senhacliente",
             "role": "client",
-            "created_at": "2025-05-15T16:58:52.191822"
+            "created_at": "2025-05-15T16:58:52.191822",
+            "processes": [
+                "a"
+            ]
+        },
+        {
+            "id": "05d8b550",
+            "name": "Sincronizacao",
+            "email": "sincronicazao@hotmail.com",
+            "password": "senha111",
+            "role": "client",
+            "created_at": "2025-05-21T22:06:34.541217"
+        },
+        {
+            "id": "f2cbd118",
+            "name": "121",
+            "email": "1111113",
+            "password": "32323121",
+            "role": "client",
+            "created_at": "2025-05-21T23:13:19.211091",
+            "processes": [
+                "1"
+            ]
+        },
+        {
+            "id": "2a414ee0",
+            "name": "Sincroniza",
+            "email": "sincronizai",
+            "password": "123456",
+            "role": "client",
+            "created_at": "2025-05-21T23:46:26.004865",
+            "processes": [
+                "ccacac",
+                "novjn"
+            ],
+            "updated_at": "2025-05-21T23:48:00.292304"
+        },
+        {
+            "id": "bde5f6de",
+            "name": "421343212",
+            "email": "12121",
+            "password": "2121",
+            "role": "client",
+            "created_at": "2025-05-21T23:53:02.110062"
+        },
+        {
+            "id": "582511fe",
+            "name": "Sk",
+            "email": "vintevinte",
+            "password": "2121",
+            "role": "client",
+            "created_at": "2025-05-21T23:53:28.067753",
+            "processes": [
+                "20250003"
+            ]
+        },
+        {
+            "id": "6d27657a",
+            "name": "syncdi",
+            "email": "jiji",
+            "password": "jojo",
+            "role": "client",
+            "created_at": "2025-05-21T23:59:46.447795",
+            "processes": [
+                "20250004"
+            ]
+        },
+        {
+            "id": "01eaceb1",
+            "name": "gestorkilbra",
+            "email": "gestorkilbra",
+            "password": "gestorkilbra",
+            "role": "manager",
+            "created_at": "2025-05-22T11:25:14.952039"
         }
     ]
 }

@@ -6,13 +6,6 @@ import uuid
 from datetime import datetime
 from utils import format_date
 
-# Verificar se o módulo sheets_data está disponível
-try:
-    import sheets_data
-    SHEETS_AVAILABLE = True
-except ImportError:
-    SHEETS_AVAILABLE = False
-
 # Default data structure based on the screenshots
 DEFAULT_DATA = {
     "company_info": {
@@ -105,32 +98,11 @@ DEFAULT_DATA = {
 def load_data():
     """Load data from file or return default data"""
     try:
-        # Verificar se devemos usar o Google Sheets
-        use_sheets = st.session_state.get('use_google_sheets', False)
-        
-        if use_sheets and SHEETS_AVAILABLE:
-            # Tentar carregar do Google Sheets
-            try:
-                print("Tentando carregar dados do Google Sheets...")
-                import sheets_data  # Importação local para garantir disponibilidade
-                sheets_status = sheets_data.get_sync_status()
-                
-                if sheets_status["connected"]:
-                    data = sheets_data.load_from_sheets()
-                    st.session_state['last_data_source'] = 'sheets'
-                    return data
-            except Exception as e:
-                print(f"Erro ao carregar do Google Sheets: {str(e)}")
-                st.error(f"Não foi possível carregar dados do Google Sheets. Usando dados locais.")
-        
-        # Se não estiver usando Sheets ou falhar, usar arquivo local
         if os.path.exists("data.json"):
             with open("data.json", "r") as f:
                 data = json.load(f)
-                st.session_state['last_data_source'] = 'local'
         else:
             data = DEFAULT_DATA
-            st.session_state['last_data_source'] = 'default'
             
         # Garantir que todos os processos tenham campos necessários
         periods_updated = []  # Lista para acompanhar quais processos tiveram períodos atualizados
@@ -206,37 +178,13 @@ def load_data():
 
 def save_data(data):
     """Save data to file"""
-    success = True
-    
-    # Sempre salvar localmente como backup
     try:
         with open("data.json", "w") as f:
             json.dump(data, f, indent=4)
+        return True
     except Exception as e:
-        st.error(f"Erro ao salvar dados no arquivo local: {e}")
-        success = False
-    
-    # Verificar se devemos usar o Google Sheets
-    use_sheets = st.session_state.get('use_google_sheets', False)
-    
-    if use_sheets and SHEETS_AVAILABLE:
-        try:
-            print("Tentando salvar dados no Google Sheets...")
-            import sheets_data  # Importação local para garantir disponibilidade
-            sheets_status = sheets_data.get_sync_status()
-            
-            if sheets_status["connected"]:
-                sheets_success = sheets_data.save_to_sheets(data)
-                if sheets_success:
-                    print("Dados salvos com sucesso no Google Sheets.")
-                else:
-                    print("Erro ao salvar dados no Google Sheets.")
-                    success = False
-        except Exception as e:
-            print(f"Erro ao salvar no Google Sheets: {str(e)}")
-            success = False
-    
-    return success
+        st.error(f"Erro ao salvar dados: {e}")
+        return False
 
 def get_process_by_id(process_id):
     """Get a process by ID"""
@@ -299,12 +247,22 @@ def add_process(process_data):
     if "events" not in process_data:
         process_data["events"] = []
     
+    # Adicionar o campo created_by para rastrear quem criou o processo
+    if 'user_id' in st.session_state and st.session_state.user_id:
+        process_data['created_by'] = st.session_state.user_id
+    else:
+        process_data['created_by'] = 'admin'  # Valor padrão
+    
     # Add creation event
+    user_name = "Admin"
+    if 'user_name' in st.session_state and st.session_state.user_name:
+        user_name = st.session_state.user_name
+        
     process_data["events"].append({
         "id": str(uuid.uuid4()),
         "date": now,
         "description": "Processo criado",
-        "user": "Admin"
+        "user": user_name
     })
     
     # Configurar período inicial baseado na data de entrada no porto/recinto
@@ -514,11 +472,14 @@ def unarchive_process(process_id):
             return True
     return False
 
-def get_processes_df(include_archived=False):
+def get_processes_df(include_archived=False, user_id=None, user_role=None, html_export=False):
     """Convert processes to a DataFrame for display
     
     Args:
         include_archived: Se True, inclui processos arquivados. Se False (padrão), exclui arquivados.
+        user_id: ID do usuário atual para filtrar processos por permissão
+        user_role: Tipo do usuário (admin, manager, client) para aplicar filtros de permissão
+        html_export: Se True, ignora as permissões do gestor para a exportação HTML (lógica baseada em cliente)
     """
     if not st.session_state.data["processes"]:
         return pd.DataFrame()
@@ -529,6 +490,34 @@ def get_processes_df(include_archived=False):
         is_archived = process.get("archived", False)
         if (include_archived and is_archived) or (not include_archived and not is_archived):
             filtered_processes.append(process)
+    
+    # Filtrar por permissões do usuário
+    if user_id and user_role and not html_export:
+        # Administradores veem tudo
+        if user_role == 'admin':
+            pass  # Não filtra
+        # Gestores veem apenas os processos que criaram (apenas na interface, não em HTML)
+        elif user_role == 'manager':
+            filtered_processes = [p for p in filtered_processes if p.get('created_by') == user_id]
+        # Clientes veem apenas os processos atribuídos a eles
+        elif user_role == 'client':
+            # Carregando usuários para obter os processos do cliente
+            from components.auth import load_users
+            users_data = load_users()
+            
+            # Encontrar o usuário cliente atual
+            client_user = None
+            for user in users_data.get('users', []):
+                if user.get('id') == user_id and user.get('role') == 'client':
+                    client_user = user
+                    break
+            
+            if client_user and 'processes' in client_user:
+                # Filtrar apenas os processos atribuídos ao cliente
+                client_processes = client_user.get('processes', [])
+                filtered_processes = [p for p in filtered_processes if p.get('id') in client_processes]
+            else:
+                filtered_processes = []  # Sem processos disponíveis
     
     if not filtered_processes:
         return pd.DataFrame()
@@ -600,8 +589,6 @@ def get_processes_df(include_archived=False):
     
     # Garantir que storage_days seja numérico para todos os processos
     if 'storage_days' in df.columns:
-        # Converter para string primeiro e depois para numérico para evitar erros com tipos incompatíveis
-        df['storage_days'] = df['storage_days'].astype(str)
         df['storage_days'] = pd.to_numeric(df['storage_days'], errors='coerce').fillna(0).astype(int)
     
     # Select columns for main table view (removido "id" conforme solicitado)

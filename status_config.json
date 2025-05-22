@@ -47,6 +47,18 @@
             "process_types": [
                 "exportacao"
             ]
+        },
+        {
+            "name": "Stats",
+            "process_types": [
+                "importacao"
+            ]
+        },
+        {
+            "name": "nono",
+            "process_types": [
+                "importacao"
+            ]
         }
     ]
 }
